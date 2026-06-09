@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 460" font-family="'Bradley Hand','Comic Sans MS',cursive">
+  <defs>
+    <filter id="rough" x="-3%" y="-3%" width="106%" height="106%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.016" numOctaves="2" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3.2"/>
+    </filter>
+  </defs>
+
+  <rect width="820" height="460" fill="#ffffff"/>
+
+  <g filter="url(#rough)">
+    <text x="410" y="46" text-anchor="middle" font-size="30" font-weight="bold" fill="#1e1e1e">The demo said 100%. The eval said 50%.</text>
+    <text x="410" y="76" text-anchor="middle" font-size="17" fill="#555555">Same classifier. The demo only showed the easy ones.</text>
+
+    <text x="50" y="116" font-size="19" font-weight="bold" fill="#1e1e1e">v1: keyword counting</text>
+    <rect x="50" y="130" width="240" height="40" rx="8" fill="#b2f2bb" stroke="#2f9e44" stroke-width="2.5"/>
+    <text x="170" y="157" text-anchor="middle" font-size="18" fill="#1e1e1e">easy   100%</text>
+    <rect x="50" y="180" width="170" height="40" rx="8" fill="#ffc9c9" stroke="#e03131" stroke-width="2.5"/>
+    <text x="135" y="207" text-anchor="middle" font-size="18" fill="#1e1e1e">'not' cases   0%</text>
+    <rect x="50" y="230" width="170" height="40" rx="8" fill="#ffc9c9" stroke="#e03131" stroke-width="2.5"/>
+    <text x="135" y="257" text-anchor="middle" font-size="18" fill="#1e1e1e">sarcasm   0%</text>
+    <rect x="50" y="292" width="265" height="52" rx="8" fill="#ffc9c9" stroke="#e03131" stroke-width="3"/>
+    <text x="182" y="324" text-anchor="middle" font-size="20" font-weight="bold" fill="#1e1e1e">Overall: 50%  (FAIL)</text>
+
+    <text x="445" y="116" font-size="19" font-weight="bold" fill="#1e1e1e">v2: + negation fix (3 lines)</text>
+    <rect x="445" y="130" width="240" height="40" rx="8" fill="#b2f2bb" stroke="#2f9e44" stroke-width="2.5"/>
+    <text x="565" y="157" text-anchor="middle" font-size="18" fill="#1e1e1e">easy   100%</text>
+    <rect x="445" y="180" width="240" height="40" rx="8" fill="#b2f2bb" stroke="#2f9e44" stroke-width="2.5"/>
+    <text x="565" y="207" text-anchor="middle" font-size="18" fill="#1e1e1e">'not' cases   100%</text>
+    <rect x="445" y="230" width="170" height="40" rx="8" fill="#ffc9c9" stroke="#e03131" stroke-width="2.5"/>
+    <text x="530" y="257" text-anchor="middle" font-size="18" fill="#1e1e1e">sarcasm   0%</text>
+    <rect x="445" y="292" width="265" height="52" rx="8" fill="#b2f2bb" stroke="#2f9e44" stroke-width="3"/>
+    <text x="577" y="324" text-anchor="middle" font-size="20" font-weight="bold" fill="#1e1e1e">Overall: 90%  (PASS)</text>
+
+    <line x1="320" y1="318" x2="438" y2="318" stroke="#1e1e1e" stroke-width="2.5"/>
+    <polygon points="438,318 428,312 428,324" fill="#1e1e1e"/>
+    <text x="379" y="309" text-anchor="middle" font-size="15" fill="#1e1e1e">+3 lines</text>
+
+    <text x="410" y="388" text-anchor="middle" font-size="19" fill="#1e1e1e">An eval tells the truth your demo hides.</text>
+    <text x="410" y="420" text-anchor="middle" font-size="14" fill="#777777">40 labeled cases, scored by slice   -   github.com/19bk</text>
+  </g>
+</svg>

@@ -1,0 +1,22 @@
+name: eval
+
+# The repo's whole point is that an eval is a gate, not a demo. So run it on
+# every push and PR, and let it fail the build if the shipped version (v2)
+# drops below the pass bar.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run the eval (gate on >= 80% overall)
+        run: python3 evals.py
