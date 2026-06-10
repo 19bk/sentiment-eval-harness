@@ -11,5 +11,9 @@ venv/
 .idea/
 .vscode/
 
-# Local LinkedIn drafts (not part of the public repo)
+# Personal / LinkedIn content - kept local, not part of the public eval showcase
 linkedin/
+ARTICLE.md
+sentiment-eval.excalidraw
+assets/img-eval.*
+assets/img-loop.*

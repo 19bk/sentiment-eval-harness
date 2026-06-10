@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-# Rasterize the diagram SVGs to high-res PNGs, programmatically.
-# No extra installs: uses the Google Chrome already on the machine, headless,
-# at 3x device scale so the text stays crisp after LinkedIn re-compresses it.
+# Rasterize the result chart (assets/img-result.svg) to a high-res PNG,
+# programmatically. No extra installs: uses the Google Chrome already on the
+# machine, headless, at 3x device scale so the text stays crisp.
 #
-#   ./assets/render.sh          # render all three
+#   ./assets/render.sh          # render the chart shown in the README
 #
-# Edit a .svg, re-run this, commit the new .png. That's the whole loop.
+# Edit img-result.svg, re-run this, commit the new img-result.png. That's the loop.
 set -euo pipefail
 
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -31,5 +31,3 @@ render() {
 }
 
 render img-result 1000 540
-render img-eval   1000 400
-render img-loop   1000 420

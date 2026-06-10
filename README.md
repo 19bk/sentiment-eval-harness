@@ -8,7 +8,7 @@ No dependencies. Runs in seconds. `python3 evals.py`.
 
 ![The demo said 100%, the real test said 50%. The first version fails on "not" sentences and sarcasm; a three-line fix reaches 90%.](assets/img-result.png)
 
-*Interactive / editable version: [open in Excalidraw](https://excalidraw.com/#json=YhfUOSHUlT7BKVB5DIzD7,EsssIMjtOoFLdDoMf59AnQ). Image source: [img-result.svg](assets/img-result.svg).*
+*Image source: [img-result.svg](assets/img-result.svg), rendered to PNG by [assets/render.sh](assets/render.sh).*
 
 ## New to this? (plain-English)
 
