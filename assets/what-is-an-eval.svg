@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+  <rect width="1000" height="360" fill="#ffffff"/>
+  <text x="500" y="58" text-anchor="middle" font-size="38" font-weight="bold" fill="#1e1e1e">What is an eval?</text>
+  <text x="500" y="98" text-anchor="middle" font-size="20" fill="#555555">A test for an AI: inputs with known answers in, a score out.</text>
+
+  <rect x="60" y="150" width="250" height="120" rx="12" fill="#a5d8ff" stroke="#1971c2" stroke-width="2.5"/>
+  <text x="185" y="205" text-anchor="middle" font-size="22" fill="#1e1e1e"><tspan x="185" dy="0">Examples with</tspan><tspan x="185" dy="28">known answers</tspan></text>
+
+  <line x1="312" y1="210" x2="373" y2="210" stroke="#1e1e1e" stroke-width="3"/>
+  <polygon points="373,210 361,203 361,217" fill="#1e1e1e"/>
+
+  <rect x="375" y="150" width="250" height="120" rx="12" fill="#d0bfff" stroke="#6741d9" stroke-width="2.5"/>
+  <text x="500" y="205" text-anchor="middle" font-size="22" fill="#1e1e1e"><tspan x="500" dy="0">Run the AI</tspan><tspan x="500" dy="28">on each one</tspan></text>
+
+  <line x1="627" y1="210" x2="688" y2="210" stroke="#1e1e1e" stroke-width="3"/>
+  <polygon points="688,210 676,203 676,217" fill="#1e1e1e"/>
+
+  <rect x="690" y="150" width="250" height="120" rx="12" fill="#b2f2bb" stroke="#2f9e44" stroke-width="2.5"/>
+  <text x="815" y="205" text-anchor="middle" font-size="22" fill="#1e1e1e"><tspan x="815" dy="0">Score:</tspan><tspan x="815" dy="28">right vs wrong</tspan></text>
+
+  <text x="500" y="330" text-anchor="middle" font-size="21" fill="#1e1e1e">Turns "it seems good" into "right 90% of the time."</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+  <rect width="1000" height="470" fill="#ffffff"/>
+  <text x="500" y="56" text-anchor="middle" font-size="38" font-weight="bold" fill="#1e1e1e">How an eval works</text>
+
+  <rect x="40" y="150" width="200" height="110" rx="12" fill="#a5d8ff" stroke="#1971c2" stroke-width="2.5"/>
+  <text x="140" y="198" text-anchor="middle" font-size="21" fill="#1e1e1e"><tspan x="140" dy="0">1. Labeled</tspan><tspan x="140" dy="26">dataset</tspan></text>
+
+  <line x1="242" y1="205" x2="288" y2="205" stroke="#1e1e1e" stroke-width="3"/>
+  <polygon points="288,205 276,198 276,212" fill="#1e1e1e"/>
+
+  <rect x="290" y="150" width="200" height="110" rx="12" fill="#d0bfff" stroke="#6741d9" stroke-width="2.5"/>
+  <text x="390" y="198" text-anchor="middle" font-size="21" fill="#1e1e1e"><tspan x="390" dy="0">2. Run the</tspan><tspan x="390" dy="26">system</tspan></text>
+
+  <line x1="492" y1="205" x2="538" y2="205" stroke="#1e1e1e" stroke-width="3"/>
+  <polygon points="538,205 526,198 526,212" fill="#1e1e1e"/>
+
+  <rect x="540" y="150" width="200" height="110" rx="12" fill="#ffd8a8" stroke="#e8590c" stroke-width="2.5"/>
+  <text x="640" y="198" text-anchor="middle" font-size="21" fill="#1e1e1e"><tspan x="640" dy="0">3. Score</tspan><tspan x="640" dy="26">by slice</tspan></text>
+
+  <line x1="742" y1="205" x2="788" y2="205" stroke="#1e1e1e" stroke-width="3"/>
+  <polygon points="788,205 776,198 776,212" fill="#1e1e1e"/>
+
+  <rect x="790" y="150" width="200" height="110" rx="12" fill="#b2f2bb" stroke="#2f9e44" stroke-width="2.5"/>
+  <text x="890" y="198" text-anchor="middle" font-size="21" fill="#1e1e1e"><tspan x="890" dy="0">4. Gate:</tspan><tspan x="890" dy="26">ship or block</tspan></text>
+
+  <!-- feedback loop: gate back to dataset -->
+  <path d="M 890 260 L 890 380 L 140 380 L 140 262" fill="none" stroke="#e03131" stroke-width="3" stroke-dasharray="2 0"/>
+  <polygon points="140,262 133,276 147,276" fill="#e03131"/>
+  <text x="515" y="412" text-anchor="middle" font-size="22" font-weight="bold" fill="#e03131">every failure becomes a new test case</text>
+</svg>
