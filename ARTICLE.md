@@ -3,13 +3,15 @@ LinkedIn article draft. To publish:
   1. LinkedIn → Write article. Title + subtitle go in the LinkedIn fields (below).
   2. Upload the three PNGs from assets/ at the [IMAGE] marks (export-free; they're committed).
   3. Image 3 (results) also makes the strongest cover image.
+  Note: LinkedIn's editor does NOT render Markdown. Don't paste this file raw; retype headings/bold
+  using LinkedIn's native formatting and upload the images by hand. (This file is the GitHub writeup.)
 This file also renders as the repo's long-form writeup on GitHub (images embed via relative paths).
 Voice: plain English, no em dashes. All numbers trace to this repo.
 -->
 
 # The demo said 100%. The eval said 50%.
 
-*A plain-English guide to the one AI skill that separates using AI from proving AI works.*
+*A plain-English guide to evals: the difference between using AI and proving it works.*
 
 ![What is an eval: examples with known answers, run the AI, score right vs wrong](assets/what-is-an-eval.png)
 
@@ -17,9 +19,9 @@ Voice: plain English, no em dashes. All numbers trace to this repo.
 
 Normal software you can test once and trust forever. 2 + 2 is 4 today, tomorrow, and in a year. Write the test once and you are done.
 
-AI does not work like that. Ask it the same question twice and you can get a good answer one time and a confidently wrong one the next. The wrong answers are the dangerous part, because they sound exactly as convincing as the right ones. "It looked great when I tried it" tells you nothing about the times you did not try.
+AI does not work like that. Ask it the same question twice and you can get a good answer one time and a confidently wrong one the next, and the wrong answers sound exactly as convincing as the right ones. Worse, you only ever see the handful of cases you happen to try. "It looked great when I tried it" tells you nothing about the cases you did not.
 
-An eval fixes that. You collect example inputs where you already know the right answer, run the AI against all of them, and count how many it gets right. That turns a feeling ("seems good") into a number ("right 90% of the time, and here is exactly where it fails").
+An eval fixes that. You collect example inputs where you already know the right answer, run the AI against all of them, and count how many it gets right. That turns a feeling ("seems good") into a number ("right 85% of the time, and here is exactly where it fails").
 
 ![How an eval works: labeled dataset, run the system, score by slice, gate; every failure becomes a new test case](assets/how-evals-work.png)
 
@@ -27,16 +29,16 @@ An eval fixes that. You collect example inputs where you already know the right 
 
 1. **Labeled dataset:** examples with known answers.
 2. **Run the system:** it could be three lines of rules or a frontier model. The harness does not care.
-3. **Score by slice:** not one overall number, but a number per type of case. This is the part that does the work.
+3. **Score by slice:** not one overall number, but a number per type of case (a "slice"). This is the part that does the work.
 4. **Gate:** if the score clears your bar, ship. If it drops below, block.
 
 And then the part most people skip: every failure you find becomes a new example in the dataset. The suite grows into a memory of every way the thing has ever broken, so it can never break that way again without you knowing.
 
-## A tiny example you can run in ten seconds
+## A tiny example you can run in seconds
 
 I wrote a sentiment classifier. It reads a sentence and says happy or unhappy. In my demo it was 100% accurate on every example I showed.
 
-Then I wrote a 40-line eval and ran it against the cases a demo never shows. It was actually 50%.
+Then I wrote a short eval, under a hundred lines, and ran it against the cases a demo never shows. It was actually 50%.
 
 ![The demo said 100%, the eval said 50%; v1 fails on negation and sarcasm, v2 reaches 90% after a three-line fix](assets/results.png)
 

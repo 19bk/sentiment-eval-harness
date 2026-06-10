@@ -22,7 +22,7 @@ No dependencies. Runs in seconds. `python3 evals.py`.
 
 I wrote a sentiment classifier. On every example I showed in a demo, it was **100% accurate**. It felt done.
 
-Then I wrote a 40-line eval — the same classifier, but tested against cases a demo never shows. It was actually **50%**.
+Then I wrote a short eval — the same classifier, but tested against cases a demo never shows. It was actually **50%**.
 
 ```
 v1  keyword counting (no negation)
