@@ -6,58 +6,61 @@ LinkedIn article draft. To publish:
   Note: LinkedIn's editor does NOT render Markdown. Don't paste this file raw; retype headings/bold
   using LinkedIn's native formatting and upload the images by hand. (This file is the GitHub writeup.)
 This file also renders as the repo's long-form writeup on GitHub (images embed via relative paths).
-Voice: plain English, no em dashes. All numbers trace to this repo.
+Audience: mostly non-technical. Voice: plain English, no jargon, no em dashes. All numbers trace to this repo.
 -->
 
-# The demo said 100%. The eval said 50%.
+# In the demo it was 100% accurate. It was actually 50%.
 
-*A plain-English guide to evals: the difference between using AI and proving it works.*
+*How I caught my own AI being confidently wrong, and the simple test that keeps it honest.*
 
-![What is an eval: examples with known answers, run the AI, score right vs wrong](assets/what-is-an-eval.png)
+I built a small AI tool and showed it off. Every example I tried, it got right. 100%. It felt finished.
 
-## Start here: what is an eval?
+Then I tested it properly, and it was right half the time.
 
-Normal software you can test once and trust forever. 2 + 2 is 4 today, tomorrow, and in a year. Write the test once and you are done.
+Same code. The only thing that changed was the questions I asked it. That gap, between "looked great" and "actually works," is the most expensive misunderstanding in AI today. Here is how I found it, and the simple habit that closes it.
 
-AI does not work like that. Ask it the same question twice and you can get a good answer one time and a confidently wrong one the next, and the wrong answers sound exactly as convincing as the right ones. Worse, you only ever see the handful of cases you happen to try. "It looked great when I tried it" tells you nothing about the cases you did not.
+## An eval is just a test with an answer key
 
-An eval fixes that. You collect example inputs where you already know the right answer, run the AI against all of them, and count how many it gets right. That turns a feeling ("seems good") into a number ("right 85% of the time, and here is exactly where it fails").
+![A test for an AI: take examples with known answers, run the AI, and score what it gets right](assets/what-is-an-eval.png)
 
-![How an eval works: labeled dataset, run the system, score by slice, gate; every failure becomes a new test case](assets/how-evals-work.png)
+Think about how you trust normal software. Type 2 + 2 into a calculator and you get 4, today and forever. Test it once, trust it always.
 
-## The method, in four steps
+AI is not like that. Ask it the same question twice and it can be brilliant one time and confidently wrong the next, and the wrong answer sounds every bit as sure as the right one. On top of that, when you try out a new tool you naturally feed it the things you expect it to handle. You never see the rest.
 
-1. **Labeled dataset:** examples with known answers.
-2. **Run the system:** it could be three lines of rules or a frontier model. The harness does not care.
-3. **Score by slice:** not one overall number, but a number per type of case (a "slice"). This is the part that does the work.
-4. **Gate:** if the score clears your bar, ship. If it drops below, block.
+An eval is the fix, and it is exactly what it sounds like: a test for an AI. You gather real examples where you already know the correct answer, run them all through the system, and score it like a teacher with an answer key. Now you are not saying "it seems good." You are saying "it is right 85% of the time, and here is exactly where it gets things wrong."
 
-And then the part most people skip: every failure you find becomes a new example in the dataset. The suite grows into a memory of every way the thing has ever broken, so it can never break that way again without you knowing.
+## I watched it happen on my own code
 
-## A tiny example you can run in seconds
+To make this concrete, I built the simplest possible version: a tool that reads a sentence and decides whether it sounds happy or unhappy.
 
-I wrote a sentiment classifier. It reads a sentence and says happy or unhappy. In my demo it was 100% accurate on every example I showed.
+In my demo it was perfect. So I sat it down for a real exam, a set of sentences I would never bother showing off.
 
-Then I wrote a short eval, under a hundred lines, and ran it against the cases a demo never shows. It was actually 50%.
+![The demo said 100%. A real test said 50%. After a three-line fix, 90%. Sarcasm still fails](assets/results.png)
 
-![The demo said 100%, the eval said 50%; v1 fails on negation and sarcasm, v2 reaches 90% after a three-line fix](assets/results.png)
+It dropped to 50%, and the test showed me precisely why. It aced the easy, obvious sentences and got the tricky ones backwards, every single time. Sentences like "not bad" or "wasn't terrible," where the words look negative but the meaning is positive. My tool was simply counting happy words and sad words, so it could not see the word "not." No demo of cheerful examples was ever going to reveal that.
 
-The slices showed exactly what was wrong. It scored 100% on easy sentences and 0% on negation. The classifier counts positive and negative words, so it nailed "this is great" and "this is terrible" but got every "not bad," "wasn't terrible," "I can't complain" backwards. It cannot see the word "not." A happy-path demo would never have surfaced that.
+The fix was tiny, about three lines. The score jumped to 90%.
 
-The fix was three lines: flip a sentiment word when a negator sits in front of it. That took it from 50% to 90%.
+## The best thing a test can do is point at the next problem
 
-Then the eval did the most useful thing of all. It pointed at the next wall: both versions still score 0% on sarcasm ("Oh great, it broke again"). That is not the eval failing. That is the eval handing me the spec for the next version.
+Here is the part I love. The test did not just grade me. It pointed straight at the next wall: every version still scores zero on sarcasm, like "Oh great, it broke again." That is not the test failing. That is the test writing my next to-do for me.
 
-## Three things I took from it
+That is the whole loop, and it is the same whether you are checking three lines of code or the most advanced AI on the planet.
 
-1. **A headline number lies; a slice tells the truth.** "50% overall" is useless. "100% on easy, 0% on negation" tells you exactly what to fix.
-2. **The demo is not the test.** A demo shows the cases your system already handles. The eval holds the cases you would never think to show.
-3. **A good eval does not just grade, it points.** Every failure becomes the next test case.
+![The loop: a set of known answers, run the system, score it, decide ship or block, and every failure becomes a new test](assets/how-evals-work.png)
 
-## Why this is about to matter more
+If you remember one thing: a demo shows you what an AI gets right. An eval shows you what it gets wrong. Only one of those tells you whether it is safe to ship.
 
-A plain AI answers a question. An agent takes actions on its own to finish a task: it searches, uses tools, runs many steps in a row. One wrong step early snowballs through every step after it. The more we hand to agents, the more "it looked fine when I tried it" stops being good enough. A score you can defend is the whole game.
+## Why this matters to you, even if you never touch code
 
-The classifier here is a deliberate toy: rules, not a model. The eval harness is the point, and the same harness works whether you are testing three lines of rules or a frontier LLM. Swap the classifier for an API call and nothing else changes.
+Modern AI is moving past just answering questions. It is starting to take actions on its own: booking, buying, replying, deciding, across many steps in a row. One confident mistake early on quietly corrupts everything that comes after it.
 
-It is public, has no dependencies, and runs in seconds: **github.com/19bk/sentiment-eval-harness**
+When someone's paycheck, a customer's refund, or a missed delivery depends on that, "it looked fine when we tried it" is not an acceptable answer. Somebody has to be able to say, with evidence, how often it is right and where it breaks. That is the work.
+
+## What I actually do
+
+That is the skill I bring. I make AI systems prove they work, in numbers a business can trust, and I find the failures before customers do.
+
+If that is useful to you, follow along. I write about making AI trustworthy, in plain English. The little project behind this post is public, runs in seconds, and needs nothing installed: github.com/19bk/sentiment-eval-harness.
+
+So I will ask you the question this taught me to ask: what is the most confidently wrong answer an AI has ever given you?
