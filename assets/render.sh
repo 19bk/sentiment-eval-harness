@@ -30,6 +30,6 @@ render() {
   echo "rendered $out  (${w}x${h} @ ${SCALE}x)"
 }
 
-render results        760 372
-render what-is-an-eval 760 290
-render how-evals-work  800 290
+render img-result 1000 540
+render img-eval   1000 400
+render img-loop   1000 420

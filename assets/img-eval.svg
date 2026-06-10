@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1e1e1e"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="400" fill="#ffffff"/>
+
+  <text x="500" y="62" text-anchor="middle" font-size="42" font-weight="700" fill="#1e1e1e">What is an eval?</text>
+  <text x="500" y="100" text-anchor="middle" font-size="22" fill="#555555">A test for your AI, with an answer key.</text>
+
+  <rect x="50" y="165" width="270" height="130" rx="14" fill="#a5d8ff" stroke="#1971c2" stroke-width="3"/>
+  <text x="185" y="222" text-anchor="middle" font-size="24" fill="#1e1e1e">Examples +</text>
+  <text x="185" y="254" text-anchor="middle" font-size="24" fill="#1e1e1e">their right answers</text>
+
+  <line x1="322" y1="230" x2="372" y2="230" stroke="#1e1e1e" stroke-width="3" marker-end="url(#ah)"/>
+
+  <rect x="375" y="187" width="210" height="86" rx="14" fill="#d0bfff" stroke="#7048e8" stroke-width="3"/>
+  <text x="480" y="240" text-anchor="middle" font-size="26" fill="#1e1e1e">Run the AI</text>
+
+  <line x1="587" y1="230" x2="637" y2="230" stroke="#1e1e1e" stroke-width="3" marker-end="url(#ah)"/>
+
+  <rect x="640" y="165" width="310" height="130" rx="14" fill="#b2f2bb" stroke="#2f9e44" stroke-width="3"/>
+  <text x="795" y="216" text-anchor="middle" font-size="24" fill="#1e1e1e">Score it</text>
+  <text x="795" y="256" text-anchor="middle" font-size="32" font-weight="700" fill="#1e1e1e">17 / 20 = 85%</text>
+
+  <text x="500" y="362" text-anchor="middle" font-size="23" font-weight="700" fill="#1e1e1e">A demo shows what it gets right. An eval shows what it gets wrong.</text>
+</svg>

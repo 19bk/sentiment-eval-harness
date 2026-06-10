@@ -6,9 +6,9 @@ A tiny, runnable demonstration of why **"it looked accurate in the demo" is not 
 
 No dependencies. Runs in seconds. `python3 evals.py`.
 
-![The demo said 100 percent, the eval said 50 percent. v1 keyword counting scores 50% and fails on negation and sarcasm; v2 scores 90% after a three-line fix.](assets/results.png)
+![The demo said 100%, the real test said 50%. The first version fails on "not" sentences and sarcasm; a three-line fix reaches 90%.](assets/img-result.png)
 
-*Interactive / editable version: [open in Excalidraw](https://excalidraw.com/#json=YhfUOSHUlT7BKVB5DIzD7,EsssIMjtOoFLdDoMf59AnQ). Image source: [results.svg](assets/results.svg).*
+*Interactive / editable version: [open in Excalidraw](https://excalidraw.com/#json=YhfUOSHUlT7BKVB5DIzD7,EsssIMjtOoFLdDoMf59AnQ). Image source: [img-result.svg](assets/img-result.svg).*
 
 ## New to this? (plain-English)
 
