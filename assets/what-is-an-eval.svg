@@ -1,22 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
-  <rect width="1000" height="360" fill="#ffffff"/>
-  <text x="500" y="58" text-anchor="middle" font-size="38" font-weight="bold" fill="#1e1e1e">What is an eval?</text>
-  <text x="500" y="98" text-anchor="middle" font-size="20" fill="#555555">A test for an AI: inputs with known answers in, a score out.</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 290" width="760" height="290" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif">
+  <rect width="760" height="290" fill="#ffffff"/>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/>
+    </marker>
+  </defs>
 
-  <rect x="60" y="150" width="250" height="120" rx="12" fill="#a5d8ff" stroke="#1971c2" stroke-width="2.5"/>
-  <text x="185" y="205" text-anchor="middle" font-size="22" fill="#1e1e1e"><tspan x="185" dy="0">Examples with</tspan><tspan x="185" dy="28">known answers</tspan></text>
+  <text x="380" y="42" text-anchor="middle" font-size="30" font-weight="700" fill="#1e1e1e">What is an eval?</text>
+  <text x="380" y="72" text-anchor="middle" font-size="16" fill="#757575">It scores the AI against known answers.</text>
 
-  <line x1="312" y1="210" x2="373" y2="210" stroke="#1e1e1e" stroke-width="3"/>
-  <polygon points="373,210 361,203 361,217" fill="#1e1e1e"/>
+  <rect x="60" y="120" width="200" height="86" rx="10" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+  <text x="160" y="157" text-anchor="middle" font-size="17" fill="#1e1e1e">20 examples with</text>
+  <text x="160" y="180" text-anchor="middle" font-size="17" fill="#1e1e1e">known answers</text>
 
-  <rect x="375" y="150" width="250" height="120" rx="12" fill="#d0bfff" stroke="#6741d9" stroke-width="2.5"/>
-  <text x="500" y="205" text-anchor="middle" font-size="22" fill="#1e1e1e"><tspan x="500" dy="0">Run the AI</tspan><tspan x="500" dy="28">on each one</tspan></text>
+  <line x1="262" y1="163" x2="316" y2="163" stroke="#1e1e1e" stroke-width="2" marker-end="url(#ah)"/>
 
-  <line x1="627" y1="210" x2="688" y2="210" stroke="#1e1e1e" stroke-width="3"/>
-  <polygon points="688,210 676,203 676,217" fill="#1e1e1e"/>
+  <rect x="320" y="132" width="140" height="62" rx="10" fill="#d0bfff" stroke="#7048e8" stroke-width="2"/>
+  <text x="390" y="170" text-anchor="middle" font-size="18" fill="#1e1e1e">Run the AI</text>
 
-  <rect x="690" y="150" width="250" height="120" rx="12" fill="#b2f2bb" stroke="#2f9e44" stroke-width="2.5"/>
-  <text x="815" y="205" text-anchor="middle" font-size="22" fill="#1e1e1e"><tspan x="815" dy="0">Score:</tspan><tspan x="815" dy="28">right vs wrong</tspan></text>
+  <line x1="462" y1="163" x2="516" y2="163" stroke="#1e1e1e" stroke-width="2" marker-end="url(#ah)"/>
 
-  <text x="500" y="330" text-anchor="middle" font-size="21" fill="#1e1e1e">Turns "it seems good" into "right 90% of the time."</text>
+  <rect x="520" y="120" width="200" height="86" rx="10" fill="#b2f2bb" stroke="#2f9e44" stroke-width="2"/>
+  <text x="620" y="154" text-anchor="middle" font-size="17" fill="#1e1e1e">Score</text>
+  <text x="620" y="182" text-anchor="middle" font-size="19" font-weight="700" fill="#1e1e1e">17 / 20 = 85%</text>
+
+  <text x="380" y="252" text-anchor="middle" font-size="16" fill="#1e1e1e">A demo shows what it gets right. An eval shows what it gets wrong.</text>
 </svg>
